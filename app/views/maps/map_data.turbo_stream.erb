@@ -1,0 +1,23 @@
+<% lat = @lat %>
+<% lon = @lon %>
+<%= turbo_stream.update 'popup-content' do %>
+  <p class='text-danger'>This HTML came from directly from TurboStream</p>
+  <p>Location Coordinates</p>
+  <p><strong>Latitude:</strong> <%= lat %></p>
+  <p><strong>Longitude:</strong> <%= lon %></p>
+
+  <p>Decimal Degrees (DD)</p>
+  <p>Latitude: <%= lat %>°</p>
+  <p>Longitude: <%= lon %>°</p>
+
+  <p>Degrees, Minutes, Seconds (DMS)</p>
+  <p>Latitude: <%= to_dms(lat, 'lat') %></p>
+  <p>Longitude: <%= to_dms(lon, 'lon') %></p>
+
+  <p>Google Maps Link</p>
+  <p>
+    <a href="https://www.google.com/maps?q=<%= lat %>,<%= lon %>" target="_blank">
+      Open in Google Maps
+    </a>
+  </p>
+<% end %>

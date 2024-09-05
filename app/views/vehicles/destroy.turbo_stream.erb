@@ -1,0 +1,7 @@
+<%= turbo_stream.remove dom_id(@vehicle, :row) %>
+
+<%= turbo_stream.update 'turbo_flash' do %>
+  <div class='alert alert-info' data-controller="flash">
+    <%= @vehicle.model %> deleted.
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<p class='fs-3 mt-3'>Vehicles</p>
+<%= button_to 'Create Random Vehicle', vehicles_path, data: { turbo_method: :post }, class: 'btn btn-outline-success' %>
+
+<%= turbo_frame_tag 'vehicles_index' do %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class='col-3'>Make</th>
+        <th class='col-3'>Model</th>
+        <th class='col-2'>Year</th>
+        <th class='col-2'>Color</th>
+        <th class='col'>Action</th>
+      </tr>
+    </thead>
+    <tbody id='vehicles_table_body'>
+      <% @vehicles.each do |vehicle| %>
+        <%= render partial: 'vehicles/vehicle_row', locals: { vehicle: vehicle } %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<%= turbo_frame_tag 'turbo_modal' %>

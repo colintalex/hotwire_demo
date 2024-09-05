@@ -1,0 +1,88 @@
+<div class='container px-5 fs-5'>
+  <p class='display-6 text-center'>less Javascript, more HTML</p>
+  <hr class='my-4'>
+  <div class="row">
+    <div class="col-12 mb-3">
+      <div class="card h-100">
+        <div class="card-header">
+          <h5 class="mb-1 text-info">Turbo Drive</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li class='p-2'>
+              Turbo Drive is the part of Turbo that enhances page-level navigation.
+            </li>
+            <li class='p-2'>It watches for link clicks and form submissions, performs them in the background, and updates the page without doing a full reload.</li>
+            <li class='p-2'>It’s the evolution of a library previously known as Turbolinks.</li>
+            <li class='p-2'>Accelerates links and form submissions by negating the need for full page reloads.</li>
+            <li class='p-2'>Works under the hood when enabled, no code considerations needed. Free performance.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mb-3">
+      <div class="card h-100">
+        <div class="card-header">
+          <h5 class="mb-1 text-warning">Turbo Frames</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li class='p-2'>TurboFrames are created by wrapping a segment of the page in a <span class='text-warning'><%= h('<turbo-frame>') %></span> element</li>
+            <li class='p-2'>Turbo Frames allow predefined parts of a page to be updated on request.</li>
+            <li class='p-2'>Any links and forms inside a frame are captured, and the frame contents automatically updated after receiving a response.</li>
+            <li class='p-2'>Regardless of whether the server provides a full document, or just a fragment containing an updated version of the requested frame, only that particular frame will be extracted from the response to replace the existing content.</li>
+          </ul>
+
+            <div class='p-3'>
+            <pre class='bg-black ps-3'><code>
+  <%= h('<turbo-frame id="message_1">
+    <h1>My message title</h1>
+    <p>My message content</p>
+    <a href="/messages/1/edit">Edit this message</a>
+  </turbo-frame>') %>
+            </code></pre>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mb-3">
+      <div class="card h-100">
+        <div class="card-header">
+          <h5 class="mb-1 text-danger">Turbo Streams</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li class='p-2'>Turbo Streams deliver page changes as fragments of HTML wrapped in <span class='text-danger'><%= h('<turbo-stream>') %></span> elements</li>
+            <li class='p-2'>Each stream element specifies an action together with a target ID to declare what should happen to the HTML inside it. </li>
+            <li class='p-2'>These elements can be delivered to the browser synchronously as a classic HTTP response, or asynchronously over transports such as webSockets, SSE, etc</li>
+            <li class='p-2'>Can be used to surgically update the DOM after a user action such as removing an element from a list without reloading the whole page</li>
+
+            <div class='p-3'>
+            <pre class='bg-black ps-3'><code>
+<%= h('<turbo-stream action="append" target="messages">
+  <template>
+    <div id="message_1">
+      This div will be appended to the element with the DOM ID "messages".
+    </div>
+  </template>
+</turbo-stream>') %>
+            </code></pre>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mb-3">
+      <div class="card h-100">
+        <div class="card-header">
+          <h5 class="mb-1 text-success">Stimulus.js</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">For those instances when Turbo is not enough, you can reach for the other side of Hotwire, and finish the job with Stimulus.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>It's all done by sending HTML over the wire. And for those instances when that's not enough, you can reach for the other side of Hotwire, and finish the job with Stimulus.</p>
+</div>

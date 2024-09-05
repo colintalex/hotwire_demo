@@ -1,0 +1,16 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class='col-3'>Make</th>
+      <th class='col-3'>Model</th>
+      <th class='col-2'>Year</th>
+      <th class='col-2'>Color</th>
+      <th class='col'>Action</th>
+    </tr>
+  </thead>
+  <tbody id='vehicles_table_body'>
+    <% vehicles.each do |vehicle| %>
+      <%= render partial: 'vehicles/vehicle_row', locals: { vehicle: vehicle } %>
+    <% end %>
+  </tbody>
+</table>

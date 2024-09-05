@@ -1,0 +1,12 @@
+<%= turbo_stream.replace dom_id(@vehicle, :row) do %>
+  <%= render partial: 'vehicles/vehicle_row', locals: { vehicle: @vehicle } %>
+<% end %>
+
+<%= turbo_stream.replace 'turbo_modal_body' do %>
+  <div class='text-center'>
+    <p class='fs-2'>
+      Vehicle Updated!
+    </p>
+    <button type="button" class="btn btn-secondary my-3" data-bs-dismiss="modal">Close</button>
+  </div>
+<% end %>

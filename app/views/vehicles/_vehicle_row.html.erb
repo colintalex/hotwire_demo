@@ -1,0 +1,10 @@
+<tr id="<%= dom_id(vehicle, :row) %>">
+  <td><%= vehicle.make %></td>
+  <td><%= vehicle.model %></td>
+  <td><%= vehicle.year %></td>
+  <td><%= vehicle.color %></td>
+  <td>
+    <%= link_to 'Edit', edit_vehicle_path(vehicle), class: 'btn btn-outline-info', data: { turbo_frame: 'turbo_modal' } %>
+    <%= link_to 'Delete', vehicle_path(vehicle), class: 'btn btn-outline-danger', data: { turbo_method: :delete } %>
+  </td>
+</tr>

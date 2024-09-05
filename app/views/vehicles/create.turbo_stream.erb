@@ -1,0 +1,3 @@
+<%= turbo_stream.prepend 'vehicles_table_body' do %>
+  <%= render partial: 'vehicles/vehicle_row', locals: { vehicle: @vehicle } %>
+<% end %>
