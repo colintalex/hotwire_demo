@@ -1,0 +1,28 @@
+<%= turbo_stream.update 'frames_2' do %>
+<div class='p-3'>
+  This content was 'surgically' designed to change using TurboStreams.
+
+  <div>
+    <p>This is the content of the TurboStream response</p>
+    <pre class='bg-black w-75 mx-auto'><code>
+    &lt;%= turbo_stream.update 'frames_2' do %&gt;
+      &lt;div&gt;
+        This content was 'surgically' designed to change.
+      &lt;/div&gt;
+    &lt;% end %&gt;
+
+    &lt;%= turbo_stream.update 'external-content' do %&gt;
+      Hello, my name is: Colin
+    &lt;% end %&gt;
+    </code></pre>
+
+  </div>
+
+  <%= link_to 'GET Request /frames', '/frames' %>
+
+</div>
+<% end %>
+
+<%= turbo_stream.update 'external-content' do %>
+ Hello, my name is: Colin
+<% end %>

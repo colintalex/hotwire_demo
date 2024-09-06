@@ -1,0 +1,18 @@
+<%= turbo_frame_tag 'frames_1' do %>
+<div class='p-3'>
+  This is the HTML from the response
+  <div class='p-3'>
+    <pre class='bg-black w-50 mx-auto'>
+    <code>
+    &lt;%= turbo_frame_tag 'frames_1' do %&gt;
+      &lt;div&gt;
+        This is the HTML from the response
+      &lt;/div&gt;
+    &lt;% end %&gt;
+    </code>
+    </pre>
+  </div>
+
+  <%= link_to 'GET Request /frames', '/frames' %>
+</div>
+<% end %>

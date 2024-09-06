@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   get '/map_demo', to: 'maps#index'
   get '/map_data', to: 'maps#map_data'
 
+  get '/frames/get', to: 'frames#get'
+  post '/frames/post', to: 'frames#post'
   resources :frames
+
+  post 'streams/increment', to: 'streams#increment'
+  post 'streams/decrement', to: 'streams#decrement'
   resources :streams
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

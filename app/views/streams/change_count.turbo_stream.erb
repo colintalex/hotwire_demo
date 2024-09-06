@@ -1,0 +1,11 @@
+<%= turbo_stream.update 'turbo_counter' do %>
+  <span class='text-info p-3  display-1'>
+    <%= @count %>
+  </span>
+<% end %>
+
+<%= turbo_stream.update 'html_counter' do %>
+  <span class='text-info p-3  display-1'>
+    <%= @count %>
+  </span>
+<% end %>

@@ -1,2 +1,54 @@
-<h1>Frames#index</h1>
-<p>Find me in app/views/frames/index.html.erb</p>
+<h1>Turbo Frames</h1>
+
+
+<div class='card'>
+  <div class='card-body'>
+    <%= turbo_frame_tag 'frames_1' do %>
+    <div class='p-3'>
+      GET request inside a TurboFrame.
+      <ul>
+        <li>Request is intercepted by turbo, running request in background</li>
+        <li>Searches for a matching turbo_frame tag in response, and update the turbo_frame with the matched content.</li>
+        <li>AKA: Send request from turbo_frame, update frame with HTML response</li>
+      </ul>
+
+      <p>Ex: This turbo_frame has an ID of 'frames_1'. If you make a GET request from this frame, it will take the turbo_frame(id: 'frames_1') from the response and update the HTML,</p>
+
+      <%= link_to 'GET', 'frames/get' %>
+    </div>
+    <% end %>
+    <hr>
+    <p> You can also target a specific frame, if you are using the link outside of the frame.</p>
+    <p>The link below is the same as the GET request above, but targets a specific frame.</p>
+    <%= link_to 'GET', 'frames/get', data: { turbo_frame: 'frames_1'} %>
+  </div>
+</div>
+
+<br>
+<hr>
+
+<div class='card'>
+  <div class='card-body'>
+    <p id='external-content'>Hello, my name is:</p>
+
+    <%= turbo_frame_tag 'frames_2' do %>
+    <div class='p-3'>
+      POST request inside a TurboFrame.
+      <ul>
+        <li>Content Type is `text/vnd.turbo-stream.html`, not `text/html`.</li>
+        <li>Request is intercepted by turbo, running request in background</li>
+        <li>Response should contain 1 or more TurboStream actions</li>
+        <li>AKA: Send request from turbo_frame, update almost anything on the page</li>
+      </ul>
+
+      <p>Ex: This turbo_frame has an ID of 'frames_1'. If you make a GET request from this frame, it will take the turbo_frame(id: 'frames_1') from the response and update the HTML,</p>
+
+      <%= button_to 'POST', 'frames/post' %>
+    </div>
+    <% end %>
+    <hr>
+    <p>Because TurboStream requests are not tied to a specific frame, they can be placed within or outside of a TurboFrame</p>
+    <p>The link below is the same as the GET request above, but targets a specific frame.</p>
+    <%= button_to 'POST', 'frames/post' %>
+  </div>
+</div>

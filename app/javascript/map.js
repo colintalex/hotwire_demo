@@ -4,15 +4,13 @@ import TileLayer from 'ol/layer/Tile';
 import XYZ from 'ol/source/XYZ';
 import { Overlay } from 'ol';
 import { toLonLat } from 'ol/proj.js';
-import { toStringHDMS } from 'ol/coordinate.js';
 
 let map;
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('turbo:load', function () {
 
+  // Popup Overlay
   const container = document.getElementById('popup');
-  const content = document.getElementById('popup-content');
-  const closer = document.getElementById('popup-closer');
 
   const overlay = new Overlay({
     element: container,
