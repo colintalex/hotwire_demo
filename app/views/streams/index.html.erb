@@ -1,15 +1,17 @@
+<h1>Turbo Streams</h1>
 <br>
 <p>TurboStreams have the ability to surgically update parts of the page.</p>
 <p>TurboStreams are designed for use w/ TurboFrames, but I have found you can also target any element w/ an ID.</p>
 
 <div class='row'>
-  <div class='col-12 my-5'>
+  <div class='col-6 my-5'>
     <div class='card'>
-      <div class='card-header'>
+      <div class='card-header fs-3'>
         Streams from a Response
       </div>
       <div class='card-body'>
         <p>We can update specific parts of the page with a TurboStream request.</p>
+        <p>Stream requests are triggered by POST requests within a frame, or enabling it on specific links outside of a frame as below.</p>
         <hr>
 
         <div class='d-flex justify-content-around'>
@@ -35,13 +37,13 @@
       </div>
     </div>
   </div>
-  <div class='col-12 my-5'>
+  <div class='col-6 my-5'>
     <div class='card'>
-      <div class='card-header'>
+      <div class='card-header fs-3'>
         Streams from a Broadcast
       </div>
       <div class='card-body'>
-        <p>We can update parts of the page via WebSockets too!</p>
+        <p>We can update parts of the page async via WebSockets too! Perfect for webhooks, etc.</p>
         <p>This HTML will be updated for all clients viewing this page whenever this model is updated in DB</p>
         <%= turbo_stream_from dom_id(@vehicle, :info) %>
 
