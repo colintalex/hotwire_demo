@@ -1,24 +1,9 @@
-# README
+# Rails 7 + Hotwire Demo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a fun little demo I setup for a lightning-talk, and its nice for Turbo-beginners because it really flexes and isolates each feature of Turbo to get a better understanding. Feel free to clone it and play around with it!
 
-Things you may want to cover:
+![Vehicles CRUD Demo](app/assets/images/Screenshot2.png)
 
-* Ruby version
+![Vehicles CRUD Demo](app/assets/images/Screenshot1.png)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![Vehicles CRUD Demo](app/assets/images/Screenshot3.png)
